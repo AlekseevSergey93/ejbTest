@@ -1,8 +1,8 @@
 package com.swemel.logic;
 
-import com.swemel.persistence.BillingInfo;
-import com.swemel.persistence.BiographicalInfo;
-import com.swemel.persistence.LoginInfo;
+import com.swemel.entity.BillingInfo;
+import com.swemel.entity.BiographicalInfo;
+import com.swemel.entity.LoginInfo;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

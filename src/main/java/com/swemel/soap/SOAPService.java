@@ -1,7 +1,7 @@
 package com.swemel.soap;
 
-import com.swemel.persistence.Bid;
-import com.swemel.persistence.Item;
+import com.swemel.entity.Bid;
+import com.swemel.entity.Item;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
