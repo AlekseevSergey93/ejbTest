@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="oracle"
+          name="wiseworm"
+          class="com.swemel.spring.prof.chapter3.domain.impl.BookwormOracle"/>
+    <bean id="message2"
+          class="java.lang.String"
+          c:_0="I know I won't Ье injected :("/>
+    <bean id="messageProvider"
+          class="com.swemel.spring.prof.chapter3.domain.impl.ConfiguraЬleMessageProvider">
+        <constructor-arg value="I hope that someone gets my message in a bottle"/>
+    </bean>
+    <bean id="constructorConfusion"
+          class="com.swemel.spring.prof.chapter3.domain.impl.ConstructorConfusion">
+        <constructor-arg type="int">
+            <value>90</value>
+        </constructor-arg>
+    </bean>
+    <bean id="injectSimpleConfig"
+          class="com.swemel.spring.prof.chapter3.spel.InjectSimpleConfig"/>
+    <bean id="injectSimpleSpel"
+          class="com.swemel.spring.prof.chapter3.spel.InjectSimpleSpel"
+          p:name="#{injectSimpleConfig.name}"
+          p:age="#{injectSimpleConfig.age + 1}"
+          p:height="#{injectSimpleConfig.height}"
+          p:programmer="#{injectSimpleConfig.programmer}"
+          p:ageInSeconds="#{injectSimpleConfig.ageinSeconds}"/>
+    <bean id="injectRef"
+          class="com.swemel.spring.prof.chapter3.domain.impl.InjectRef"
+          p:oracle-ref="oracle"/>
+
+
+
+    <context:component-scan
+            base-package="com.swemel.spring.prof.chapter2, com.swemel.spring.prof.chapter3"><!--Пакет, в котором будет поиск классов, содержащих аннотации @Component, @Controller, @Repository и @Service, @Autowired и @Inject-->
+    <context:exclude-filter type="assignable"
+            expression="com.swemel.spring.prof.chapter2.HelloWorldDecoupled"/> <!-- Кроме класса. В качестве type м.б. annotation, regex, assignable,aspectj или custom-->
+    </context:component-scan>
+</beans>

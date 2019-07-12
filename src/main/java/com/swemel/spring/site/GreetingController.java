@@ -1,4 +1,4 @@
-package com.swemel.spring;
+package com.swemel.spring.site;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

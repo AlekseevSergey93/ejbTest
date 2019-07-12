@@ -1,4 +1,4 @@
-package com.swemel.spring;
+package com.swemel.spring.site;
 
 public class Greeting {
     private final long id;

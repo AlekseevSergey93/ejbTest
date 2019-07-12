@@ -1,4 +1,7 @@
-package com.swemel.spring.prof.chapter3;
+package com.swemel.spring.prof.chapter3.domain.impl;
+
+import com.swemel.spring.prof.chapter3.domain.Container;
+import com.swemel.spring.prof.chapter3.domain.ManagedComponent;
 
 public class ContextualizedDependencyLookup implements ManagedComponent {
 

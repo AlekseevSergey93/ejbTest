@@ -1,4 +1,4 @@
-package com.swemel.spring;
+package com.swemel.spring.site;
 
 import com.swemel.entity.Person;
 import org.springframework.data.repository.PagingAndSortingRepository;
