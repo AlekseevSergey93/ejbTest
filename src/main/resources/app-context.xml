@@ -11,4 +11,59 @@
     <bean id="provider"
           class="com.swemel.spring.prof.chapter2.MessageProviderImpl"/>
 
+    <bean id="lyricHolder"
+          class="com.swemel.spring.prof.chapter3.domain.impl.LyricHolder"/>
+
+    <bean id="injectCollection"
+          class="com.swemel.spring.prof.chapter3.services.Collectionlnjection">
+        <property name="map">
+            <map>
+                <entry key="someValue">
+                    <value>It's a Friday, we finally made it</value>
+                </entry>
+                <entry key="someBody">
+                    <ref bean="lyricHolder"></ref>
+                </entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="firstName">John</prop>
+                <prop key="secondName">Mayer</prop>
+            </props>
+        </property>
+        <property name="set">
+            <set>
+                <value>I can't believe I get to see
+                    your face</value>
+                <ref bean="lyricHolder"/>
+            </set>
+        </property>
+        <property name="list">
+            <list>
+                <value>You've been working and I've
+                    been waiting</value>
+                <ref bean="lyricHolder"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="singer"
+          class="com.swemel.spring.prof.chapter3.domain.impl.Singer"
+          scope="singleton"/>
+
+    <bean id="methodReplacer"
+          class="com.swemel.spring.prof.chapter3.domain.impl.FormatMessageReplacer"/>
+
+    <bean id="replacementTarget"
+          class="com.swemel.spring.prof.chapter3.domain.impl.ReplacementTarget">
+          <replaced-method name="formatMessage"
+                           replacer="methodReplacer">
+              <arg-type>String</arg-type>
+          </replaced-method>
+    </bean>
+
+    <bean id="standardTarget"
+          class="com.swemel.spring.prof.chapter3.domain.impl.ReplacementTarget"/>
+
 </beans>
