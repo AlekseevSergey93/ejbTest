@@ -1,6 +1,6 @@
-package com.swemel;
+package com.swemel.cassandra;
 
-public class pagination {
+public class Pagination {
 //        if (isEnd(httpSession) && !clearFlag) {
 //            return new ArrayList<>();
 //        }
